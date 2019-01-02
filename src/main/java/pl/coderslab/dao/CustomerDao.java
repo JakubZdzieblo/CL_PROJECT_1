@@ -20,22 +20,6 @@ public class CustomerDao {
             }
 
         }
-//
-//        public static List<Customer> loadAllByGroupId(int id){
-//            String query = "select * from users where user_group_id=?";
-//            String[] param = { String.valueOf(id) };
-//            List<User> result = new ArrayList<>();
-//
-//            try {
-//                List<String[]> data = DBService.getData(query, param);
-//                for (String[] row : data) {
-//                    result.add(createSingleCustomerObject(row));
-//                }
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//            return result;
-//        }
 
 
         public static Customer getById(int id){
@@ -47,7 +31,7 @@ public class CustomerDao {
         }
 
         public static Customer getByUsername(String name){
-            String query = "select * from `customers` where `name`='Wong';";
+            String query = "select * from `customers` where `name`=?;";
             String[] params = new String[1];
             params[0] = name;
 

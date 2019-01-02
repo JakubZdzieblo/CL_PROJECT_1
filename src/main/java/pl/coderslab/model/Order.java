@@ -13,7 +13,7 @@ public class Order {
     private String problemDescription;
     private String serviceDescription;
     private String status;
-    private String vehicleId;
+    private int vehicleId;
     private double serviceCost;
     private double partsCost;
     private double employeeHourCost;
@@ -94,11 +94,11 @@ public class Order {
         this.status = status;
     }
 
-    public String getVehicleId() {
+    public int getVehicleId() {
         return vehicleId;
     }
 
-    public void setVehicleId(String vehicleId) {
+    public void setVehicleId(int vehicleId) {
         this.vehicleId = vehicleId;
     }
 
