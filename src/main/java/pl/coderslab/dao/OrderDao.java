@@ -11,6 +11,55 @@ import java.util.List;
 
 public class OrderDao {
 
+    public static List<Order> loadByStatus(String status) {
+
+        String query = "select * from `orders` where `status`=?;";
+
+        String[] params = {status};
+
+        List<Order> result = new ArrayList<>();
+
+        try {
+            List<String[]> data = DBService.getData(query, params);
+
+            for(String[] row : data){
+                Order order = createSingleOrderObject(row);
+                result.add(order);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return result;
+
+    }
+
+    public static List<Order> loadByEmployeeId(int id) {
+
+        String query = "select * from `orders` where `employee_id`=?;";
+
+        String[] params = {String.valueOf(id)};
+
+        List<Order> result = new ArrayList<>();
+
+        try {
+            List<String[]> data = DBService.getData(query, params);
+
+            for(String[] row : data){
+                Order order = createSingleOrderObject(row);
+                result.add(order);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return result;
+
+    }
+
+
     public static void save(Order order){
 
         if(order.getId() == 0){

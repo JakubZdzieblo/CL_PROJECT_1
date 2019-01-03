@@ -4,4 +4,7 @@ public class Status {
 
     public static final String[] statuses = {"car in", "costs approved", "in service", "ready", "cancelled"};
 
+    public static String[] getStatuses() {
+        return statuses;
+    }
 }
