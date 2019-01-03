@@ -12,6 +12,7 @@
 </head>
 <body>
 <%@ include file="header.jsp"%>
+<div style="padding: 2em">
 <table class="table table-striped">
     <thead><h4>Orders by employee ${employee.firstName} ${employee.name}:</h4>
     <tr>
@@ -42,7 +43,7 @@
     </c:forEach>
     </tbody>
 </table>
-
+</div>
 
 <%@ include file="footer.jsp"%>
 </body>

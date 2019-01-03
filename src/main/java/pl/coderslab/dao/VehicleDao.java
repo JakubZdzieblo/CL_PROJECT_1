@@ -36,10 +36,28 @@ public class VehicleDao {
         //prepare list for data from DB
         List<Vehicle> result = new ArrayList<>();
 
-        try {
-            List<String[]> data = DBService.getData(query, null);
+        loadDataToList(query, null, result);
 
-            for(String[] row : data){
+        return result;
+    }
+
+    public static List<Vehicle> loadAllByCustomerId(int id){
+        String query = "Select * from `vehicles` where `customer_id`=?;";
+
+        String[] params = new String[1];
+        params[0] = String.valueOf(id);
+        List<Vehicle> result = new ArrayList<>();
+
+        loadDataToList(query, params, result);
+
+        return result;
+    }
+
+    private static void loadDataToList(String query, String[] params, List<Vehicle> result) {
+        try {
+            List<String[]> data = DBService.getData(query, params);
+
+            for (String[] row : data) {
                 Vehicle vehicle = createSingleVehicleObject(row);
                 result.add(vehicle);
             }
@@ -47,10 +65,7 @@ public class VehicleDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        return result;
     }
-
 
     private static void addToDb(Vehicle vehicle){
 
@@ -132,18 +147,20 @@ public class VehicleDao {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
         int elemId = Integer.valueOf(elem[0]);
-        String elemMake = elem[1];
-        int elemYear = Integer.parseInt(elem[2]);
-        String elemModel = elem[3];
-        String elemReg = elem[4];
+        int elemCustomerId = Integer.valueOf(elem[1]);
+        String elemMake = elem[2];
+        int elemYear = Integer.parseInt(elem[3]);
+        String elemModel = elem[4];
+        String elemReg = elem[5];
 
         LocalDate elemInspection = null;
-        if (elem[5] != null) {
-            elemInspection = LocalDate.parse(elem[5], formatter);
+        if (elem[6] != null) {
+            elemInspection = LocalDate.parse(elem[6], formatter);
         }
 
         Vehicle vehicle = new Vehicle();
         vehicle.setId(elemId);
+        vehicle.setCustomer_id(elemCustomerId);
         vehicle.setMake(elemMake);
         vehicle.setYear(elemYear);
         vehicle.setModel(elemModel);

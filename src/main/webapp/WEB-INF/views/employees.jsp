@@ -12,6 +12,7 @@
 </head>
 <body>
 <%@ include file="header.jsp"%>
+<div style="padding: 2em">
 <table class="table table-striped">
     <h4>Employees:</h4>
     <thead>
@@ -44,6 +45,7 @@
     </tbody>
 </table>
 <p><a class="btn btn-primary" href="employee-add">Add new employee</a></p>
+</div>
 <%@ include file="footer.jsp"%>
 </body>
 </html>

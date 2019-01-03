@@ -48,7 +48,7 @@
         <div class="form-group row">
             <label class="col-md-1">Hour rate</label>
             <div class="col-md-4">
-                <input type="number" class="form-control" name="hourCost" value="${employee.hourCost}">
+                <input type="number" step="0.01" class="form-control" name="hourCost" value="${employee.hourCost}">
             </div>
         </div>
         <input type="hidden" name="id" value="${employee.id}">

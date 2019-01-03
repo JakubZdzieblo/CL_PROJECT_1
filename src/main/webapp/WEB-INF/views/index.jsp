@@ -12,6 +12,7 @@
 </head>
 <body>
 <%@ include file="header.jsp"%>
+<div style="padding: 2em">
 <table class="table table-striped">
     <thead><h4>Current service jobs:</h4>
     <tr>
@@ -44,7 +45,7 @@
     </c:forEach>
     </tbody>
 </table>
-
+</div>
 
 <%@ include file="footer.jsp"%>
 </body>

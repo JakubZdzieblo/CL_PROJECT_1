@@ -11,6 +11,34 @@ import java.util.List;
 
 public class OrderDao {
 
+    public static List<Order> loadByCustomerId(int id) {
+
+        String query = "select o.* from orders o join vehicles v on o.vehicle_id = v.id where v.customer_id=?;";
+
+        String[] params = {String.valueOf(id)};
+
+        List<Order> result = new ArrayList<>();
+
+        loadDataToList(query, params, result);
+
+        return result;
+
+    }
+
+    private static void loadDataToList(String query, String[] params, List<Order> result) {
+        try {
+            List<String[]> data = DBService.getData(query, params);
+
+            for (String[] row : data) {
+                Order order = createSingleOrderObject(row);
+                result.add(order);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static List<Order> loadByStatus(String status) {
 
         String query = "select * from `orders` where `status`=?;";
@@ -19,17 +47,7 @@ public class OrderDao {
 
         List<Order> result = new ArrayList<>();
 
-        try {
-            List<String[]> data = DBService.getData(query, params);
-
-            for(String[] row : data){
-                Order order = createSingleOrderObject(row);
-                result.add(order);
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        loadDataToList(query, params, result);
 
         return result;
 
@@ -43,17 +61,7 @@ public class OrderDao {
 
         List<Order> result = new ArrayList<>();
 
-        try {
-            List<String[]> data = DBService.getData(query, params);
-
-            for(String[] row : data){
-                Order order = createSingleOrderObject(row);
-                result.add(order);
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        loadDataToList(query, params, result);
 
         return result;
 
@@ -85,17 +93,7 @@ public class OrderDao {
         //prepare list for data from DB
         List<Order> result = new ArrayList<>();
 
-        try {
-            List<String[]> data = DBService.getData(query, null);
-
-            for(String[] row : data){
-                Order order = createSingleOrderObject(row);
-                result.add(order);
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        loadDataToList(query, null, result);
 
         return result;
     }
