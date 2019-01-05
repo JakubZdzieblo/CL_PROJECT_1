@@ -29,4 +29,24 @@ public class ReportsDao {
 
     }
 
+    public static List<String[]> profitReport(LocalDate start, LocalDate end) {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String startDate = start.format(formatter);
+        String endDate = end.format(formatter);
+
+        String query = "select o.id, o.service_end, o.service_cost, o.parts_cost, o.work_hours, e.hour_cost " +
+                "from orders o join employees e on o.employee_id = e.id where service_end between ? and ?;";
+
+        List<String[]> result = new ArrayList<>();
+        String[] params = {startDate, endDate};
+        try {
+            result = DBService.getData(query, params);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
 }
