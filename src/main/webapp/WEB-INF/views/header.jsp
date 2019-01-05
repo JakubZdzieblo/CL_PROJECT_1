@@ -11,7 +11,7 @@
             <li><a href="index">Home</a></li>
             <li><a href="employees">Employees</a></li>
             <li><a href="customers">Customers</a></li>
-            <li><a href="#">Page 3</a></li>
+            <li><a href="vehicles">Vehicles</a></li>
         </ul>
     </div>
 </nav>

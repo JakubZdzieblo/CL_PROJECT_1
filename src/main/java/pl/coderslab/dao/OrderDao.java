@@ -11,6 +11,8 @@ import java.util.List;
 
 public class OrderDao {
 
+
+
     public static List<Order> loadByCustomerId(int id) {
 
         String query = "select o.* from orders o join vehicles v on o.vehicle_id = v.id where v.customer_id=?;";
@@ -44,6 +46,20 @@ public class OrderDao {
         String query = "select * from `orders` where `status`=?;";
 
         String[] params = {status};
+
+        List<Order> result = new ArrayList<>();
+
+        loadDataToList(query, params, result);
+
+        return result;
+
+    }
+
+    public static List<Order> loadByVehicleId(int id) {
+
+        String query = "select * from `orders` where `vehicle_id`=?;";
+
+        String[] params = {String.valueOf(id)};
 
         List<Order> result = new ArrayList<>();
 

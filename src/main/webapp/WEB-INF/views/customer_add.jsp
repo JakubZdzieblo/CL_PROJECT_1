@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="../../bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap-theme.css" rel="stylesheet">
     <title>New customer</title>
 </head>
 <body>
@@ -18,13 +18,13 @@
         <div class="form-group row">
             <label class="col-md-1">First Name</label>
             <div class="col-md-4">
-                <input type="text" class="form-control" name="firstName">
+                <input type="text" class="form-control" name="firstName" required>
             </div>
         </div>
         <div class="form-group row">
             <label class="col-md-1">Surname</label>
             <div class="col-md-4">
-                <input type="text" class="form-control" name="name">
+                <input type="text" class="form-control" name="name" required>
             </div>
         </div>
         <div class="form-group row">

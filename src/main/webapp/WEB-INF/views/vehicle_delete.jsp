@@ -8,17 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="/bootstrap/css/bootstrap-theme.css" rel="stylesheet">
-    <title>Remove employee</title>
+    <title>Remove vehicle</title>
 </head>
 <body>
 <%@ include file="header.jsp"%>
 
-<form method="post" action="employee-delete">
+<form method="post" action="vehicle-delete">
     <div style="padding: 3em">
-        <p>Please confirm deletion of employee ${employee.firstName} ${employee.name}</p>
-        <input type="hidden" name="id" value="${employee.id}">
+        <p>Please confirm deletion of ${vehicle.make} ${vehicle.model} ${vehicle.registration}</p>
+        <input type="hidden" name="id" value="${vehicle.id}">
         <button type="submit" class="btn btn-danger">Delete</button><br><br>
-        <p><a class="btn btn-info" href="employees">Back to employee list</a></p>
+        <p><a class="btn btn-info" href="vehicles">Back to vehicles list</a></p>
     </div>
 </form>
 

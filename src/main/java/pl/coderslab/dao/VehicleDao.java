@@ -74,8 +74,8 @@ public class VehicleDao {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         params[0] = String.valueOf(vehicle.getCustomer_id());
         params[1] = vehicle.getMake();
-        params[2] = vehicle.getModel();
-        params[3] = String.valueOf(vehicle.getYear());
+        params[2] = String.valueOf(vehicle.getYear());
+        params[3] = vehicle.getModel();
         params[4] = vehicle.getRegistration();
         params[5] = vehicle.getNextInspection().format(formatter);
 
@@ -97,8 +97,8 @@ public class VehicleDao {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         params[0] = String.valueOf(vehicle.getCustomer_id());
         params[1] = vehicle.getMake();
-        params[2] = vehicle.getModel();
-        params[3] = String.valueOf(vehicle.getYear());
+        params[2] = String.valueOf(vehicle.getYear());
+        params[3] = vehicle.getModel();
         params[4] = vehicle.getRegistration();
         params[5] = vehicle.getNextInspection().format(formatter);
         params[6] = String.valueOf(vehicle.getId());

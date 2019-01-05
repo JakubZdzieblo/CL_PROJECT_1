@@ -6,21 +6,24 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="/bootstrap/css/bootstrap-theme.css" rel="stylesheet">
-    <title>Customer's Vehicles</title>
+    <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../../bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+    <title>Vehicles</title>
 </head>
 <body>
 <%@ include file="header.jsp"%>
 <div style="padding: 2em">
     <table class="table table-striped">
-        <thead><h4>Vehicles owned by ${customer.firstName} ${customer.name}:</h4>
+        <h4>Vehicles:</h4>
+        <thead>
         <tr>
-            <th>Make</th>
-            <th>Model</th>
-            <th>Year</th>
-            <th>Reg Number</th>
-            <th>Next Inspection</th>
+            <th>make</th>
+            <th>model</th>
+            <th>year</th>
+            <th>registration</th>
+            <th>details</th>
+            <th>edit</th>
+            <th>delete</th>
         </tr>
         </thead>
         <tbody>
@@ -30,13 +33,15 @@
                 <td>${vehicle.model}</td>
                 <td>${vehicle.year}</td>
                 <td>${vehicle.registration}</td>
-                <td>${vehicle.nextInspection}</td>
-                </tr>
+                <td><a class="btn btn-primary btn-sm" href="vehicle-details?id=${vehicle.id}">Details</a></td>
+                <td><a class="btn btn-warning btn-sm" href="vehicle-edit?id=${vehicle.id}">Edit</a></td>
+                <td><a class="btn btn-danger btn-sm" href="vehicle-delete?id=${vehicle.id}">Delete</a></td>
+            </tr>
         </c:forEach>
         </tbody>
     </table>
+    <p><a class="btn btn-primary" href="vehicle-add">Add new vehicle</a></p>
 </div>
-
 <%@ include file="footer.jsp"%>
 </body>
 </html>
