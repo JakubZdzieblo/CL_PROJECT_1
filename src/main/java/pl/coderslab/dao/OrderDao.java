@@ -123,10 +123,27 @@ public class OrderDao {
                 "values (?,?,?,?,?,?,?,?,?,?,?,?);";
         String[] params = new String[12];
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        params[0] = order.getAcceptanceDate().format(formatter);
-        params[1] = order.getPlannedServiceStartDate().format(formatter);
-        params[2] = order.getActualServiceStartDate().format(formatter);
-        params[3] = order.getServiceEndDate().format(formatter);
+
+        if (order.getAcceptanceDate() != null) {
+            params[0] = order.getAcceptanceDate().format(formatter);
+        } else {
+            params[0] = null;
+        }
+        if (order.getPlannedServiceStartDate() != null) {
+            params[1] = order.getPlannedServiceStartDate().format(formatter);
+        } else {
+            params[1] = null;
+        }
+        if (order.getActualServiceStartDate() != null) {
+            params[2] = order.getActualServiceStartDate().format(formatter);
+        } else {
+            params[2] = null;
+        }
+        if (order.getServiceEndDate() != null) {
+            params[3] = order.getServiceEndDate().format(formatter);
+        } else {
+            params[3] = null;
+        }
         params[4] = String.valueOf(order.getEmployeeId());
         params[5] = order.getProblemDescription();
         params[6] = order.getServiceDescription();
@@ -154,10 +171,28 @@ public class OrderDao {
 
         String[] params = new String[13];
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        params[0] = order.getAcceptanceDate().format(formatter);
-        params[1] = order.getPlannedServiceStartDate().format(formatter);
-        params[2] = order.getActualServiceStartDate().format(formatter);
-        params[3] = order.getServiceEndDate().format(formatter);
+
+        if (order.getAcceptanceDate() != null) {
+            params[0] = order.getAcceptanceDate().format(formatter);
+        } else {
+            params[0] = null;
+        }
+        if (order.getPlannedServiceStartDate() != null) {
+            params[1] = order.getPlannedServiceStartDate().format(formatter);
+        } else {
+            params[1] = null;
+        }
+        if (order.getActualServiceStartDate() != null) {
+            params[2] = order.getActualServiceStartDate().format(formatter);
+        } else {
+            params[2] = null;
+        }
+        if (order.getServiceEndDate() != null) {
+            params[3] = order.getServiceEndDate().format(formatter);
+        } else {
+            params[3] = null;
+        }
+
         params[4] = String.valueOf(order.getEmployeeId());
         params[5] = order.getProblemDescription();
         params[6] = order.getServiceDescription();

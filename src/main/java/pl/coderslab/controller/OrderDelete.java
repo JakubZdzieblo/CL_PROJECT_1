@@ -1,7 +1,7 @@
 package pl.coderslab.controller;
 
-import pl.coderslab.dao.VehicleDao;
-import pl.coderslab.model.Vehicle;
+import pl.coderslab.dao.OrderDao;
+import pl.coderslab.model.Order;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,19 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/vehicle-delete")
-public class VehicleDelete extends HttpServlet {
+@WebServlet("/order-delete")
+public class OrderDelete extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         int id = Integer.parseInt(req.getParameter("id"));
 
-        Vehicle vehicle = VehicleDao.getById(id);
+        Order order = OrderDao.getById(id);
 
-        req.setAttribute("vehicle", vehicle);
+        req.setAttribute("order", order);
 
-        req.getRequestDispatcher("WEB-INF/views/vehicle_delete.jsp").forward(req, resp);
+        req.getRequestDispatcher("WEB-INF/views/order_delete.jsp").forward(req, resp);
 
     }
 
@@ -31,9 +31,9 @@ public class VehicleDelete extends HttpServlet {
 
         int id = Integer.parseInt(req.getParameter("id"));
 
-        VehicleDao.delete(id);
+        OrderDao.delete(id);
 
-        resp.sendRedirect("/vehicles");
+        resp.sendRedirect("/orders");
 
     }
 }
