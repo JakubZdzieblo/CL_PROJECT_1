@@ -13,6 +13,7 @@
             <li><a href="customers">Customers</a></li>
             <li><a href="vehicles">Vehicles</a></li>
             <li><a href="orders">Orders</a></li>
+            <li><a href="reports">Reports</a></li>
         </ul>
     </div>
 </nav>
