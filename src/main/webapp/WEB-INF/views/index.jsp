@@ -26,6 +26,7 @@
         <th>Cost</th>
         <th>Parts</th>
         <th>Hours</th>
+        <th>Details</th>
     </tr>
     </thead>
     <tbody>
@@ -41,6 +42,7 @@
             <td>${order.serviceCost}</td>
             <td>${order.partsCost}</td>
             <td>${order.workHours}</td>
+            <td><a class="btn btn-primary btn-sm" href="order-details?id=${order.id}">Details</a></td>
         </tr>
     </c:forEach>
     </tbody>

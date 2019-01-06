@@ -73,7 +73,8 @@
         <div class="col-lg-2">${employee.hourCost}</div>
     </div>
     <br><br>
-    <p><a class="btn btn-info" href="orders">Back to orders list</a></p>
+    <p><a class="btn btn-info" href="orders">Orders list</a>
+        <a class="btn btn-info" href="index">Home page</a></p>
 </div>
 <%@ include file="footer.jsp"%>
 </body>

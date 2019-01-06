@@ -7,20 +7,6 @@ import java.util.List;
 public class DBService {
 
 
-//    private static String dbUrl;
-//    private final static String dbUser = "root";
-//    private final static String dbPass = "coderslab";
-//
-//    private static void initParams(String dbName){
-//        dbUrl = "jdbc:mysql://127.0.0.1:3306/"+dbName+"?useSSL=false&characterEncoding=UTF8&useOldAliasMetadataBehavior=true";
-//    }
-
-//    public static Connection getConnection(String dbName) throws SQLException {
-//        initParams(dbName);
-//        return DriverManager.getConnection(dbUrl, dbUser, dbPass);
-//    }
-
-
     public static void executeUpdate(String query, String dbName) throws SQLException{
 
         executeQuery(query, null);

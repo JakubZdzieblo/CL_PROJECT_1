@@ -35,6 +35,8 @@
         </c:forEach>
         </tbody>
     </table>
+    <a class="btn btn-info" href="customers">Customers list</a>
+    <a class="btn btn-info" href="index">Home page</a>
 </div>
 
 <%@ include file="footer.jsp"%>

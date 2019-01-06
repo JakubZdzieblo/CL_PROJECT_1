@@ -12,9 +12,17 @@
 </head>
 <body>
 <%@ include file="header.jsp"%>
-<h4 style="padding-left: 2em">Choose report dates and type</h4>
+<h4 style="padding-left: 2em">Choose report type and date range:</h4>
 <form method="post" action="reports">
     <div style="padding: 3em">
+        <div class="form-group row">
+            <input class="form-check-input" type="radio" name="report" value="workHoursReport">
+            <label class="form-check-label">Working hours per employee</label>
+        </div>
+        <div class="form-group row">
+            <input class="form-check-input" type="radio" name="report" value="profitReport">
+            <label class="form-check-label">Profits from period</label>
+        </div>
         <div class="form-group row">
             <label class="col-md-1">Start date:</label>
             <div class="col-md-2">
@@ -26,14 +34,6 @@
             <div class="col-md-2">
                 <input type="date" class="form-control" name="endDate" required>
             </div>
-        </div>
-        <div class="form-group row">
-            <input class="form-check-input" type="radio" name="report" value="workHoursReport">
-            <label class="form-check-label">Working hours per employee</label>
-        </div>
-        <div class="form-group row">
-            <input class="form-check-input" type="radio" name="report" value="profitReport">
-            <label class="form-check-label">Profits from period
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>

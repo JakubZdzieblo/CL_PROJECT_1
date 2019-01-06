@@ -43,7 +43,7 @@ public class OrderDao {
 
     public static List<Order> loadByStatus(String status) {
 
-        String query = "select * from `orders` where `status`=?;";
+        String query = "select * from `orders` where `status`=? order by `acceptance` desc;";
 
         String[] params = {status};
 
