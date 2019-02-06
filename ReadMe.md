@@ -17,6 +17,7 @@ Functions:
  - CRUD for Employees, Customers, Vehicles and Orders
  - Generating reports
 
+Screenshot:
 
 ![Screenshot
-](https://raw.githubusercontent.com/JakubZdzieblo/CL_PROJECT_1/master/carservice.jpg)
+](carservice.jpg)
