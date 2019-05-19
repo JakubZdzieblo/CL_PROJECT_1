@@ -1,6 +1,6 @@
 ### Coders Lab Project 1
 
-"Car Service" CRM app made for 4th week of Java bootcamp.
+"Car Service" CRM app.
 
 Technologies / models used:
 
